@@ -5,6 +5,7 @@ jobs:
     docker:
       - image: alpine:latest
     steps:
+      - checkout
       - run:
           command: sh './start_crashtest.sh $CRASHTEST_WEBHOOK'
       - store_test_results:
