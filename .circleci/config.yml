@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          command: sh './start_crashtest.sh $CRASHTEST_WEBHOOK'
+          command: sh './CIRCLE_PROJECT_REPONAME/start_crashtest.sh $CRASHTEST_WEBHOOK'
       - store_test_results:
           path: ~/crashtest
 
