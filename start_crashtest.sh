@@ -11,6 +11,12 @@ WEBHOOK=$1
 # Set the API endpoint
 API_ENDPOINT="https://api.crashtest.cloud/webhook"
 
+#### Setup the alpine system ####
+
+apk add curl jq
+mkdir -p ~/crashtest
+
+
 #### Start Security Scan ####
 
 # Start Scan and get scan ID
@@ -41,5 +47,5 @@ echo "Scan finished with status $STATUS."
 
 #### Download Scan Report ####
 
-curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/report/junit -o crashtest/report.xml
+curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/report/junit -o ~/crashtest/report.xml
 echo "Downloaded Report to crashtest/report.xml"
