@@ -1,0 +1,11 @@
+version: 2
+
+stages:
+  - Security Stage:
+      jobs:
+        - Crashtest Security Scan
+
+Crashtest Security Scan:
+  tasks:
+    - script:
+      - sh start_crashtest.sh $CRASHTEST_WEBHOOK
