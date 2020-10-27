@@ -1,4 +1,8 @@
 version: 2
+plan:
+  project-key: TEST
+  key: PLAN
+  name: My Plan
 
 stages:
   - Security Stage:
