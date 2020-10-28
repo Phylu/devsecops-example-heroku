@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Run Crashtest Security Scan') {
       steps {
-        sh './start_crashtest_jenkins.sh $CRASHTEST_WEBHOOK'
+        sh 'bash start_crashtest_jenkins.sh $CRASHTEST_WEBHOOK'
       }
     }
   }
