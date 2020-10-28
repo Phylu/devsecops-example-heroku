@@ -1,0 +1,6 @@
+deploy:
+  provider: script
+  script: bash start_crashtest_travis.sh $CRASHTEST_WEBHOOK
+  on:
+    tags: true
+    all_branches: true
