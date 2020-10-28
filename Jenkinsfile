@@ -1,9 +1,15 @@
-environment {
-  CRASHTEST_WEBHOOK = credentials('crashtest-webhook')
-}
+pipeline {
 
-stage('Run Crashtest Security Scan') {
-  steps {
-    sh './start_crashtest_jenkins.sh $CRASHTEST_WEBHOOK'
- }
+  environment {
+    CRASHTEST_WEBHOOK = credentials('crashtest-webhook')
+  }
+
+  stages {
+    stage('Run Crashtest Security Scan') {
+      steps {
+        sh './start_crashtest_jenkins.sh $CRASHTEST_WEBHOOK'
+      }
+    }
+  }
+
 }
