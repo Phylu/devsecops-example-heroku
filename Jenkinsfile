@@ -1,5 +1,7 @@
 pipeline {
 
+  agent any
+
   environment {
     CRASHTEST_WEBHOOK = credentials('crashtest-webhook')
   }
