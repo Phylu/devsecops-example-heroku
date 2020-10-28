@@ -11,6 +11,10 @@ WEBHOOK=$1
 # Set the API endpoint
 API_ENDPOINT="https://api.crashtest.cloud/webhook"
 
+echo $PATH
+which curl
+which jq
+
 #### Start Security Scan ####
 
 # Start Scan and get scan ID
