@@ -32,7 +32,7 @@ do
     sleep 60
 
     # Refresh status
-    STATUS=`curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/status | jq .data.status.code`
+    STATUS=`curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/status | jq .data.status.status_code`
 
 done
 
