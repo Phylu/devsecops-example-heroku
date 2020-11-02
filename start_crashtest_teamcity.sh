@@ -29,10 +29,10 @@ echo "Started Scan for Webhook $WEBHOOK. Scan ID is $SCAN_ID."
 #### Check Security Scan Status ####
 
 # Set status to Queued (100)
-STATUS="100"
+STATUS=100
 
 # Run the scan until the status is not queued (100) or running (101) anymore
-while [ $STATUS -le "101" ]
+while [ $STATUS -le 101 ]
 do
     echo "Scan Status currently is $STATUS (101 = Running)"
 
