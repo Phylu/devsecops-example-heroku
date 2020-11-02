@@ -21,6 +21,14 @@ mkdir -p test-reports
 
 # Start Scan and get scan ID
 SCAN_ID=`curl --silent -X POST --data "" $API_ENDPOINT/$WEBHOOK | jq .data.scanId`
+
+# Check if a positive integer was returned as SCAN_ID
+if ! [ $SCAN_ID -ge 0 ] 2>/dev/null
+then
+    echo "Could not start Scan for Webhook $WEBHOOK."
+    exit 1
+fi
+
 echo "Started Scan for Webhook $WEBHOOK. Scan ID is $SCAN_ID."
 
 
@@ -30,7 +38,7 @@ echo "Started Scan for Webhook $WEBHOOK. Scan ID is $SCAN_ID."
 STATUS="100"
 
 # Run the scan until the status is not queued (100) or running (101) anymore
-while [[ $STATUS -le "101" ]]
+while [ $STATUS -le "101" ]
 do
    echo "Scan Status currently is $STATUS (101 = Running)"
 
