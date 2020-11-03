@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Run Crashtest Security Scan
+    steps:
+    - name: Crashtest Security Action Step
+      id: crashtest-security
+      uses: phylu/crashtest-security-action
+      with:
+        crashtest-webhook: 'Test'
