@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Crashtest Security Action Step
       id: crashtest-security
-      uses: phylu/crashtest-security-action@v0.1.17
+      uses: phylu/crashtest-security-action@v0.1.18
       with:
         crashtest-webhook: '${{ secrets.CRASHTEST_WEBHOOK }}'
         pull-report: 'true'
