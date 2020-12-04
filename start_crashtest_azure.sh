@@ -13,7 +13,7 @@ API_ENDPOINT="https://api.crashtest.cloud/webhook"
 
 #### Setup the build system ####
 
-apt-get install jq
+#apt-get install jq
 mkdir -p test-reports
 
 
