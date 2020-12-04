@@ -1,5 +1,7 @@
 jobs:
 - job: CashtestSecurityScan
+  pool:
+    vmImage: 'ubuntu-latest'
   steps:
   - script: bash start_crashtest_azure.sh $env:CRASHTEST_WEBHOOK
     env:
