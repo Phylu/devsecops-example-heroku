@@ -1,13 +1,6 @@
 jobs:
 - job: CashtestSecurityScan
   steps:
-  - script: pwd
-  - script: ls
-  - script: pwd
-    workingDirectory: $(Agent.BuildDirectory)
-  - script: ls
-    workingDirectory: $(Agent.BuildDirectory)
-  - script: start_crashtest_azure $env:CRASHTEST_WEBHOOK
-    workingDirectory: $(Agent.BuildDirectory)
+  - script: start_crashtest_azure.sh $env:CRASHTEST_WEBHOOK
     env:
       CRASHTEST_WEBHOOK: $(crashtestWebhook)
