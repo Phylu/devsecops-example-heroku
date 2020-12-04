@@ -15,7 +15,6 @@ API_ENDPOINT="https://api.crashtest.cloud/webhook"
 #### Setup the build system ####
 
 apk add curl jq
-mkdir -p test-reports
 
 
 #### Start Security Scan ####
@@ -56,5 +55,5 @@ echo "Scan finished with status $STATUS."
 
 #### Download Scan Report ####
 
-curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/report/junit -o test-reports/report.xml
-echo "Downloaded Report to test-reports/report.xml"
+curl --silent $API_ENDPOINT/$WEBHOOK/scans/$SCAN_ID/report/junit -o report.xml
+echo "Downloaded Report to report.xml"
