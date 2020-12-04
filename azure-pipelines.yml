@@ -1,0 +1,6 @@
+jobs:
+- job: CashtestSecurityScan
+  steps:
+  - script: ./start_crashtest_azure $env:CRASHTEST_WEBHOOK
+    env:
+      CRASHTEST_WEBHOOK: $(crashtestWebhook)
