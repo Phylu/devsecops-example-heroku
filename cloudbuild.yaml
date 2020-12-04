@@ -4,10 +4,4 @@ steps:
   args: [ '-c', "gcloud secrets versions access latest --secret=crashtest-webhook --format='get(payload.data)' | tr '_-' '/+' | base64 -d > webhook.txt" ]
 - name: alpine:latest
   entrypoint: 'sh'
-  args: ['-c', 'pwd']
-- name: alpine:latest
-  entrypoint: 'sh'
-  args: ['-c', 'ls']
-- name: alpine:latest
-  entrypoint: 'sh'
-  args: ['-c', '_WEBHOOK_SECRET=$(cat webhook.txt) start_crashtest_cloudbuild.sh \)_VARIABLE_NAME']
+  args: ['-c', '_WEBHOOK_SECRET=$(cat webhook.txt) && sh start_crashtest_cloudbuild.sh \)_VARIABLE_NAME']
