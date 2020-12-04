@@ -6,3 +6,7 @@ jobs:
   - script: bash start_crashtest_azure.sh $CRASHTEST_WEBHOOK
     env:
       CRASHTEST_WEBHOOK: $(crashtestWebhook)
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: 'JUnit'
+      testResultsFiles: 'test-reports/*.xml'
