@@ -3,6 +3,6 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-  - script: bash start_crashtest_azure.sh $env:CRASHTEST_WEBHOOK
+  - script: bash start_crashtest_azure.sh $CRASHTEST_WEBHOOK
     env:
       CRASHTEST_WEBHOOK: $(crashtestWebhook)
